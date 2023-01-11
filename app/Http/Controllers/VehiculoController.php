@@ -17,9 +17,9 @@ class VehiculoController extends Controller
         $vehiculo->Capasidad = $request->input("capasidad");
         $vehiculo->Mastil = $request->input("mastil");
         $vehiculo->Tipove = $request->input("tipove");
-        $vehiculo->Veiculo_en_renta = $request->has("Veiculo_en_renta");
-        $vehiculo->Veiculo_en_vendido = $request->has("Veiculo_en_vendido");
-        $vehiculo-> Veiculo_en_reparacion = $request->has("Veiculo_en_reparacion");
+        $vehiculo->Estatus = $request->input("estatus");
+
+       
         $vehiculo->save();
         $vehiculos = Vehiculo::all();
         return view("admin.inventario");

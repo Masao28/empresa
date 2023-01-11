@@ -22,9 +22,8 @@ class CreateVehiculosTable extends Migration
             $table->string('capasidad');
             $table->string('mastil');
             $table->string('tipove');
-            $table->boolean('veiculo_en_renta');
-            $table->boolean('veiculo_en_vendido');
-            $table->boolean('veiculo_en_reparacion');
+            $table->string('estatus');
+          
             $table->timestamps();
         });
     }

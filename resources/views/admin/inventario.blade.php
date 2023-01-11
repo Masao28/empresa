@@ -114,39 +114,21 @@
         <option value="audi">Audi</option>
       </select>
     </div></TD> 
-     <TD>Estatus:</TD>
-     <TD>  
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" name="direccion_asistida" type="checkbox" id="lbl_da">
-            <label class="col-sm-2 form-check-label" for="lbl_da">
-              Veiculo en renta
-            </label>
-          </div>
-        </div>
-      </div></TD>
      <TD> <div class="form-group row">
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" name="abs" type="checkbox" id="lbl_abs">
-          <label class="col-sm-2 form-check-label" for="lbl_abs">
-            Veiculo vendido
-          </label>
-        </div>
-      </div>
-    </div>
-  </TD>
-     <TD> <div class="form-group row">
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" name="airbags" type="checkbox" id="lbl_airbags">
-          <label class="col-sm-2 form-check-label" for="lbl_airbags">
-            veiculo en reparacion
-          </label>
-        </div>
-      </div>
+      <label for="inputEstatus" class="col-sm-2 col-form-label">Tipo de veiculo:</label>
     </div></TD>
+     <TD> <div class="col-sm-10">
+      <select name="estatus" type="text" class="form-control" id="inputEstatus">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div></TD>  
+     <TD>ddf</TD>  
+      
+
+     
 	</TR>
   <TR>
 	</TR>
