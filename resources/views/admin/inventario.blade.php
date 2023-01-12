@@ -39,15 +39,6 @@
 <center><h1>Ingresar nuevo veiculo</h1></center>
 <form action="/guardar" method="POST">
   @csrf
-  @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <TABLE BORDER CELLPADDING=40 CELLSPACING=10>
 	<TR>
 		<TD> <div class="form-group row">
@@ -141,6 +132,10 @@
   <TR>
 	</TR>
 </TABLE>
+<center><h1>Maquinaria </h1></center>
+
+
+
 
 
 </form>
