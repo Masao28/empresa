@@ -19,7 +19,7 @@
 
       <div class="w-1/1 px-0 mr-auto">
         <a href="{{ route('admin.maquinaria') }}" class="font-bold
-      py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
+        py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
       </div>
      
 
@@ -115,17 +115,23 @@
       </select>
     </div></TD> 
      <TD> <div class="form-group row">
-      <label for="inputEstatus" class="col-sm-2 col-form-label">Tipo de veiculo:</label>
+      <label for="inputEstatus" class="col-sm-2 col-form-label">estatus:</label>
     </div></TD>
      <TD> <div class="col-sm-10">
       <select name="estatus" type="text" class="form-control" id="inputEstatus">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+        <option value="veiculo en renta ">veiculo en renta </option>
+        <option value="veiculo vendido">veiculo vendido</option>
+        <option value="veiculo en reparacion">veiculo en reparacion</option>
+      
       </select>
     </div></TD>  
-     <TD>ddf</TD>  
+     <TD><div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="font-bold
+        py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
+      </div>
+    </div></TD>  
+     <TD></TD>  
       
 
      
@@ -133,12 +139,7 @@
   <TR>
 	</TR>
 </TABLE>
-<center><div class="form-group row">
-  <div class="col-sm-10">
-    <button type="submit" class="font-bold
-    py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
-  </div>
-</div></center>
+
 </form>
 </div>
 </div>
