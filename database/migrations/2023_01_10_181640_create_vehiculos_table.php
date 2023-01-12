@@ -17,13 +17,12 @@ class CreateVehiculosTable extends Migration
             $table->increments('id');
             $table->string('marca');
             $table->string('modelo');
-            $table->string('Serie');
+            $table->string('Serie')->unique();
             $table->string('tipo');
             $table->string('capasidad');
             $table->string('mastil');
             $table->string('tipove');
             $table->string('estatus');
-          
             $table->timestamps();
         });
     }
