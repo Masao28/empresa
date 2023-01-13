@@ -27,7 +27,11 @@ class AdminController extends Controller {
 
         return view('admin.maquinaria');
     }
+    
+    public function empresa() {
 
-
+        return view('admin.empresa');
+    }
    
+
 }

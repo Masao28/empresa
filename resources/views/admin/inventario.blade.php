@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,8 +9,8 @@
     <!-- Tailwind CSS Link -->
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
-  </head>
-  <body class="bg-gray-100 text-gray-800">
+</head>
+<body class="bg-gray-100 text-gray-800">
 
     <nav class="flex py-5 bg-indigo-500 text-white">
       <div class="w-1/2 px-12 mr-auto">
@@ -19,7 +19,7 @@
      
 
       <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
-      @if(auth()->check())
+       @if(auth()->check())
         <li class="mx-8">
           <p class="text-xl">BIENVENIDO: <b>{{ auth()->user()->name }}</b></p>
         </li>
@@ -27,19 +27,20 @@
           <a href="{{ route('login.destroy') }}" class="font-bold
           py-3 px-4 rounded-md bg-red-500 hover:bg-red-600">Salir</a>
         </li>
-      @else
+       @else
       @endif
       </ul>
-
     </nav>
     @yield('content')
-<div class="container">
-<div class="col-sm-8">
+  <div class="container">
+  <div class="col-sm-8">
   <br>
-<center><h1>Ingresar nuevo veiculo</h1></center>
-<form action="/guardar" method="POST">
+
+ <center><h1>Ingresar nuevo veiculo</h1>
+ <form action="/guardar" method="POST">
   @csrf
-<TABLE BORDER CELLPADDING=40 CELLSPACING=10>
+ <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
+  
 	<TR>
 		<TD> <div class="form-group row">
       <label for="inputMarca" class="col-sm-2 col-form-label">Marca:</label>
@@ -62,14 +63,15 @@
       <TD><div class="col-sm-10">
         <input name="modelo" type="text" class="form-control" id="inputModelo" placeholder="modelo">
       </div></TD>
+
          <TD> <div class="form-group row">
           <label for="inputSerie" class="col-sm-2 col-form-label">Serie:</label>
         </div></TD>
          <TD><div class="col-sm-10">
           <input name="serie" type="text" class="form-control" id="inputSerie" placeholder="numero de serie ">
         </div></TD>
-     
 	</TR>
+
 	<TR>
 		<TD>
       <div class="form-group row">
@@ -85,6 +87,7 @@
     <TD><div class="col-sm-10">
       <input name="capasidad" type="text" class="form-control" id="inputCapasidad" placeholder="capasidad">
     </div></TD>
+
     <TD> <div class="form-group row">
       <label for="inputMastil" class="col-sm-2 col-form-label">Mastil:</label>
     </div></TD>
@@ -92,6 +95,7 @@
       <input name="mastil" type="text" class="form-control" id="inputMastil" placeholder="mastil">
     </div></TD>
 	</TR>
+  
   <TR>
 		<TD> <div class="form-group row">
       <label for="inputTipove" class="col-sm-2 col-form-label">Tipo de veiculo:</label>
@@ -131,16 +135,8 @@
   
   <TR>
 	</TR>
-</TABLE>
-<center><h1>Maquinaria </h1></center>
-
-
-
-
-
-</form>
-</div>
-</div>
+ </TABLE>
+ </form></center>
 
 </body>
 </html>

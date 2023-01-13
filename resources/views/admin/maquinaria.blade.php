@@ -64,6 +64,14 @@
         <td><a href="{{ route('admin.Montacargasdesalida') }}" class="font-bold
               py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Ver</a></td>
       </tr>
+      <td><br><br></td>
+      <tr>
+        <td>Montacargas de salida</td>
+    
+        <td><a href="{{ route('admin.empresa') }}" class="font-bold
+              py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Agregar enpresa</a></td>
+      </tr>
+      
   </table> </center>
   </body>
 </html>

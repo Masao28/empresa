@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\EmpresaController;
 
 
 Route::get('/', function () {
@@ -17,8 +18,6 @@ Route::get('/register', [RegisterController::class, 'create'])
 
 Route::post('/register', [RegisterController::class, 'store'])
     ->name('register.store');
-
-
 
 Route::get('/login', [SessionsController::class, 'create'])
     ->middleware('guest')
@@ -51,16 +50,24 @@ Route::get('/MontacargasS', [AdminController::class, 'MontacargasS'])
 ->middleware('auth.admin')
 ->name('admin.Montacargasdesalida');
 
-///ruta de guardar monta cargas
-//Route::get('/guardar',[VehiculoController::Class, 'guardar'])
-//->middleware('auth.admin')
-//->name('admin.inventario');///--->
-
-Route::post('/guardar',[VehiculoController::Class ,'guardar']);
-
+/////regresar a menu principal 
 Route::get('/regresarmenu', [AdminController::class, 'regresarmenu'])
 ->middleware('auth.admin')
 ->name('admin.maquinaria');
+
+/////inventario guardar 
+Route::post('/guardar',[VehiculoController::Class ,'guardar']);
+///guardar empresa 
+Route::post('/guardar2',[EmpresaController::Class ,'guardar2']);
+
+/////egregar emnpresa
+Route::get('/empresa', [AdminController::class, 'empresa'])
+->middleware('auth.admin')
+->name('admin.empresa');
+
+
+
+
 
 
 
