@@ -36,7 +36,9 @@
   <div class="col-sm-8">
   <br>
 
- <center><h1>Ingresar nuevo veiculo</h1>
+ <center>
+  <h1 class="text-5xl text-center pt-1">Ingresar nuevo Ventana</h1>
+
  <form action="/guardar" method="POST">
   @csrf
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>

@@ -36,7 +36,9 @@
   <div class="col-sm-8">
   <br>
 
- <center><h1>Agregar empresa    </h1>
+ <center>
+  <h1 class="text-5xl text-center pt-24">Agregar Empresa</h1>
+
  <form action="/guardar2" method="POST">
   @csrf
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
