@@ -10,9 +10,13 @@ class EmpresaController extends Controller
 
         $empresa = new Empresa;
         $empresa->empresa = $request->input("empresa");
-
         $empresa->save();
         $empresas = Empresa::all();
-        return view("admin.empresa");
+        
+        
+        return redirect()->route('admin.tablaempresa');
+        ///return redirect()->to('tablaempresa');
+    
+
     }
 }

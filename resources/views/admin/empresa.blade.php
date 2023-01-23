@@ -37,7 +37,7 @@
   <br>
 
  <center>
-  <h1 class="text-5xl text-center pt-24">Agregar Empresa</h1>
+  <h1 class="text-3xl text-center pt-1">Agregar Empresa</h1>
 
  <form action="/guardar2" method="POST">
   @csrf
@@ -55,8 +55,10 @@
 
      <TD><div class="form-group row">
       <div class="col-sm-10">
+        
         <button type="submit" class="font-bold
-        py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
+        py-2 px-5 rounded-md bg-green-300 hover:bg-green-500">Guardar</button>
+
       </div>
     </div></TD>  
      <TD> <div class="w-1/1 px-0 mr-auto">
@@ -70,7 +72,37 @@
 	</TR>
  </TABLE>
  </form></center>
-<center><h1>lista de empresas  </h1></center>
+<center>  
+<h1 class="text-3xl text-center pt-1">lista  de Empresa</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      
+      <th scope="col">Nombre</th>
+     <th>Mas</th>
+
+   
+    </tr>
+  </thead>
+  <tbody>
+    
+    @foreach ($empresa as $item)
+    <tr>
+      <th scope="row">{{ $item->id }}</th>
+     
+      <td>{{ $item->empresa }}</td>
+      <td> <button type="submit" class="font-bold
+        py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>
+        <td> <button type="submit" class="font-bold
+          py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button></td>
+       </tr>
+    @endforeach
+  </tbody>
+</table></center>
+
 
 
 

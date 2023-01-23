@@ -6,6 +6,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\EmpresaController;
+use App\Models\Empresa;
 
 
 Route::get('/', function () {
@@ -55,15 +56,24 @@ Route::get('/regresarmenu', [AdminController::class, 'regresarmenu'])
 ->middleware('auth.admin')
 ->name('admin.maquinaria');
 
-/////inventario guardar 
+/////inventario guardarmaquinaria 
 Route::post('/guardar',[VehiculoController::Class ,'guardar']);
+
 ///guardar empresa 
 Route::post('/guardar2',[EmpresaController::Class ,'guardar2']);
+
 
 /////egregar emnpresa
 Route::get('/empresa', [AdminController::class, 'empresa'])
 ->middleware('auth.admin')
 ->name('admin.empresa');
+
+///tabla de empresas
+Route::get('/tablaempresa', [AdminController::class, 'tablaempresa'])
+->middleware('auth.admin')
+->name('admin.empresa');
+
+
 
 
 

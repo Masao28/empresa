@@ -9,5 +9,6 @@ class empresa extends Model
 {
  
     protected $guarded2 = ["id"];
+    ////// ['id','empresa'];
     
 }

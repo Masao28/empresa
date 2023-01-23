@@ -66,10 +66,10 @@
       </tr>
       <td><br><br></td>
       <tr>
-        <td>Montacargas de salida</td>
+        <td>Agregar</td>
     
         <td><a href="{{ route('admin.empresa') }}" class="font-bold
-              py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Agregar enpresa</a></td>
+              py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Agregar </a></td>
       </tr>
       
   </table> </center>
