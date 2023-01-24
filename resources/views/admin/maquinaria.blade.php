@@ -62,15 +62,16 @@
         <td>Montacargas de salida</td>
     
         <td><a href="{{ route('admin.Montacargasdesalida') }}" class="font-bold
-              py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Ver</a></td>
+              py-3 px-10 rounded-md bg-blue-200 hover:bg-blue-400">renta de vehiculos</a></td>
       </tr>
       <td><br><br></td>
       <tr>
         <td>Agregar</td>
     
-        <td><a href="{{ route('admin.empresa') }}" class="font-bold
+        <td><a href="{{ route('admin.agregar') }}" class="font-bold
               py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Agregar </a></td>
       </tr>
+     
       
   </table> </center>
   </body>

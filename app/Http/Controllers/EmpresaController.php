@@ -14,8 +14,8 @@ class EmpresaController extends Controller
         $empresas = Empresa::all();
         
         
-        return redirect()->route('admin.tablaempresa');
-        ///return redirect()->to('tablaempresa');
+        ////return redirect()->route('admin.tablaempresa');
+        return redirect()->to('tablaempresa');
     
 
     }

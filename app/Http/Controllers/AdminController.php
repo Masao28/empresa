@@ -40,6 +40,30 @@ class AdminController extends Controller {
         $empresa = DB::table('empresas')->get();
         return view('admin.empresa', compact('empresa'));
     }
+    
+    public function tablavehiculo(){
+        $vehiculo = DB::table('vehiculos')->get();
+        return view('admin.inventario', compact('vehiculo'));
+    }
+    public function agregar() {
+
+        return view('admin.agregar');
+    }
+
+    public function regresaragregar() {
+
+        return view('admin.agregar');
+    }
+
+    public function vitasmotores() {
+
+        return view('admin.motores');
+    }
+    
+    public function vitatipovehiculo() {
+
+        return view('admin.tipovehiculo');
+    }
 
 
     

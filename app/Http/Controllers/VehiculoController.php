@@ -20,7 +20,9 @@ class VehiculoController extends Controller
 
         $vehiculo->save();
         $vehiculos = Vehiculo::all();
-        return view("admin.inventario");
+
+        ////return view("admin.inventario");
+        return redirect()->to('tablavehiculo');
     }
     
 }

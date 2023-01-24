@@ -63,7 +63,7 @@ Route::post('/guardar',[VehiculoController::Class ,'guardar']);
 Route::post('/guardar2',[EmpresaController::Class ,'guardar2']);
 
 
-/////egregar emnpresa
+/////agregar emnpresa
 Route::get('/empresa', [AdminController::class, 'empresa'])
 ->middleware('auth.admin')
 ->name('admin.empresa');
@@ -73,6 +73,31 @@ Route::get('/tablaempresa', [AdminController::class, 'tablaempresa'])
 ->middleware('auth.admin')
 ->name('admin.empresa');
 
+///////tabla vehiculos
+Route::get('/tablavehiculo', [AdminController::class, 'tablavehiculo'])
+->middleware('auth.admin')
+->name('admin.inventario');
+
+/////vista de agregar   
+Route::get('/agregar', [AdminController::class, 'agregar'])
+->middleware('auth.admin')
+->name('admin.agregar');
+
+
+//////regresaragregar
+Route::get('/regresaragregar', [AdminController::class, 'regresaragregar'])
+->middleware('auth.admin')
+->name('admin.regresaragregar');
+
+//////vistamotores
+Route::get('/vitasmotores', [AdminController::class, 'vitasmotores'])
+->middleware('auth.admin')
+->name('admin.vitasmotores');
+
+//////vista tipo de vehiculos
+Route::get('/vitatipovehiculo', [AdminController::class, 'vitatipovehiculo'])
+->middleware('auth.admin')
+->name('admin.vitatipovehiculo');
 
 
 

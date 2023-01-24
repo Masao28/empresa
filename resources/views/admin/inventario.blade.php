@@ -37,7 +37,7 @@
   <br>
 
  <center>
-  <h1 class="text-5xl text-center pt-1">Ingresar nuevo Ventana</h1>
+  <h1 class="text-2xl text-center pt-1">Agregar nuevo  vehiculo</h1>
 
  <form action="/guardar" method="POST">
   @csrf
@@ -116,9 +116,11 @@
     </div></TD>
      <TD> <div class="col-sm-10">
       <select name="estatus" type="text" class="form-control" id="inputEstatus">
+        <option value="veiculo en disponible">veiculo en disponible</option>
         <option value="veiculo en renta ">veiculo en renta </option>
         <option value="veiculo vendido">veiculo vendido</option>
         <option value="veiculo en reparacion">veiculo en reparacion</option>
+       
       
       </select>
     </div></TD>  
@@ -138,7 +140,49 @@
   <TR>
 	</TR>
  </TABLE>
- </form></center>
+ </form>
+ <h1 class="text-2x1 text-center pt-2">Lista de vehiculos</h1>
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      
+      <th scope="col">Marca</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Serie</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Capasidad</th>
+      <th scope="col">Mastil</th>
+      <th scope="col">Tipo de vehiculo</th>
+      <th scope="col">Estatus</th>
+     <th>Mas</th>
+
+   
+    </tr>
+  </thead>
+  <tbody>
+    
+    @foreach ($vehiculo as $item2)
+    <tr>
+      <th scope="row">{{ $item2->id }}</th>
+      <td>{{ $item2->marca }}</td>
+      <td>{{ $item2->modelo }}</td>
+      <td>{{ $item2->Serie}}</td>
+      <td>{{ $item2->tipo }}</td>
+      <td>{{ $item2->capasidad }}</td>
+      <td>{{ $item2->mastil }}</td>
+      <td>{{ $item2->tipove}}</td>
+      <td>{{ $item2->estatus }}</td>
+
+      <td> <button type="submit" class="font-bold
+        py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>
+        <td> <button type="submit" class="font-bold
+          py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button></td>
+       </tr>
+    @endforeach
+  </tbody>
+</center>
 
 </body>
 </html>

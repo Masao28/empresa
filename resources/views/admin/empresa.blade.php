@@ -62,7 +62,7 @@
       </div>
     </div></TD>  
      <TD> <div class="w-1/1 px-0 mr-auto">
-        <a href="{{ route('admin.maquinaria') }}" class="font-bold
+        <a href="{{ route('admin.regresaragregar') }}" class="font-bold
 
         py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
 
