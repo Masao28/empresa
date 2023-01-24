@@ -30,4 +30,4 @@ class CreateEmpresasTable extends Migration
     {
         Schema::dropIfExists('empresas');
     }
-}
+}       
