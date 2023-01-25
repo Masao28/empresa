@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehiculo extends Model
 {
-    protected $guarded = [ 'id',
+    protected $guarded = [ 
+    'id',
     'marca',
     'modelo',
     'Serie',
@@ -19,5 +20,4 @@ class Vehiculo extends Model
     'tipove',
     'estatus'];
   
-    ///return $this->hasOne(Phone::class);
 }

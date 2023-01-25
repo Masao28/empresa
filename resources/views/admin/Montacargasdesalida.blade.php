@@ -34,9 +34,9 @@
     @yield('content')
   <div class="container">
   <div class="col-sm-8">
-  <br>
+  
 <center>
-  <h1 class="text-5xl text-center pt-24">Veiculos de salida</h1>
+  <h1 class="text-5xl text-center pt-2">Formato de renta de vehiculo</h1>
   <br>
   <div class="w-1/1 px-0 mr-auto">
     <a href="{{ route('admin.maquinaria') }}" class="font-bold

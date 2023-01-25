@@ -38,7 +38,7 @@
 
     <tr>
   
-      <td><h1>Inventario de maquinaria</h1></td>
+      <td><h1>Inventario</h1></td>
       <td><a href="{{ route('admin.inventario') }}" class="font-bold
         py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Agregar</a></td>
   
@@ -49,24 +49,24 @@
       </tr>
     <tr>
   
-      <td>Montacargas de entrada</td>
+      <td>Lista  de Montacargas <br> de entrada</td>
   
       <td><a href="{{ route('admin.Montacargasdeentrada') }}" class="font-bold
-          py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Ver</a></td>
+          py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Ver lista </a></td>
     </tr>
     <tr>
         <td><br><br></td>
       
       </tr>
     <tr>
-        <td>Montacargas de salida</td>
+        <td>Lista de Montacargas <br> de salida</td>
     
         <td><a href="{{ route('admin.Montacargasdesalida') }}" class="font-bold
-              py-3 px-10 rounded-md bg-blue-200 hover:bg-blue-400">renta de vehiculos</a></td>
+              py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Ver lista</a></td>
       </tr>
       <td><br><br></td>
       <tr>
-        <td>Agregar</td>
+        <td>Dar de alta </td>
     
         <td><a href="{{ route('admin.agregar') }}" class="font-bold
               py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Agregar </a></td>
