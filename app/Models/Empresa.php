@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class empresa extends Model
 {
  
-    protected $guarded2 = ['id','empresa'];
+    protected $guarded2 = ['id_empresa','nombre'];
+    
     ////// ['id','empresa'];
     
 }

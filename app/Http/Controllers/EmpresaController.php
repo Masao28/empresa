@@ -9,7 +9,7 @@ class EmpresaController extends Controller
     function guardar2(Request $request){
 
         $empresa = new Empresa;
-        $empresa->empresa = $request->input("empresa");
+        $empresa->nombre = $request->input("nombre");
         $empresa->save();
         $empresas = Empresa::all();
         

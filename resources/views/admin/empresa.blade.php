@@ -48,7 +48,7 @@
       <label for="inputEmpresa" class="col-sm-2 col-form-label">Nombre de la empresa:</label>
     </div></TD> 
     <TD> <div class="col-sm-10">
-        <input name="empresa" type="text" class="form-control" id="inputEmpresa" placeholder="Nombre de la empresa">
+        <input name="nombre" type="text" class="form-control" id="inputEmpresa" placeholder="Nombre de la empresa">
       </div>
     </TD> 
 
@@ -91,9 +91,9 @@
     
     @foreach ($empresa as $item)
     <tr>
-      <th scope="row">{{ $item->id }}</th>
+      <th scope="row">{{ $item->id_empresa }}</th>
      
-      <td>{{ $item->empresa }}</td>
+      <td>{{ $item->nombre }}</td>
       <td> <button type="submit" class="font-bold
         py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>
         <td> <button type="submit" class="font-bold
