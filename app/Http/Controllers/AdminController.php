@@ -30,17 +30,27 @@ class AdminController extends Controller {
 
         return view('admin.maquinaria');
     }
-    
-    public function empresa() {
-
-        return view('admin.empresa');
-    }
-   
     public function tablaempresa(){
         $empresa = DB::table('empresas')->get();
         return view('admin.empresa', compact('empresa'));
     }
-    
+    public function motor() {
+
+        return view('admin.motores');
+    }
+    public function tablamotor(){
+        $motores = DB::table('motores')->get();
+        return view('admin.motores', compact('motores'));
+    }
+    public function tipoV() {
+
+        return view('admin.tipovehiculo');
+    }
+    public function tablatipo(){
+        $tipoV = DB::table('tipovehiculos')->get();
+        return view('admin.tipovehiculo', compact('tipoV'));
+    }
+
     public function tablavehiculo(){
         $vehiculo = DB::table('vehiculos')->get();
         return view('admin.inventario', compact('vehiculo'));
@@ -54,12 +64,6 @@ class AdminController extends Controller {
 
         return view('admin.agregar');
     }
-
-    public function vitasmotores() {
-
-        return view('admin.motores');
-    }
-    
     public function vitatipovehiculo() {
 
         return view('admin.tipovehiculo');

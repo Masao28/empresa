@@ -54,10 +54,10 @@
       <td><a href="{{ route('admin.empresa') }}" class="font-bold
         py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Agregar empresa </a></td>
     <td></td>
-      <td><a href="{{ route('admin.vitasmotores') }}" class="font-bold
+      <td><a href="{{ route('admin.motores') }}" class="font-bold
         py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Agregar motor </a></td>
     <td></td>
-      <td><a href="{{ route('admin.vitatipovehiculo') }}" class="font-bold
+      <td><a href="{{ route('admin.tipovehiculo') }}" class="font-bold
         py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Agregar tipo de vehiculo </a></td>
     <td></td>
       
