@@ -46,14 +46,14 @@ class AdminController extends Controller {
     }
     public function tipoV() {
        
-        return view('admin.tipovehiculo', compact('tipoVe'));
+        return view('admin.tipovehiculo');
     }
     public function tablatipo(){
        
         $tipoV = DB::table('tipovehiculos')->get();
-        return view('admin.tipovehiculo');
+        return view('admin.tipovehiculo', compact('tipoV'));
     }
-
+   
     public function tablavehiculo(){
         $tipomo= Motor::all();
         $tipoVe= TipoVehiculo::all();
