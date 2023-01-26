@@ -10,14 +10,17 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     protected $guarded = [ 
-    'id',
+    'id_vehiculo',
     'marca',
     'modelo',
-    'Serie',
-    'tipo',
     'capasidad',
     'mastil',
-    'tipove',
-    'estatus'];
+    'serie',
+    'status',
+    'id_motor',
+    'id_tipoVehiculo'
+
+
+    ];
   
 }
