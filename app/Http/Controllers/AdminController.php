@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Empresa;
+use App\Models\TipoVehiculo;
+use App\Models\Motor;
 
 
 class AdminController extends Controller {
@@ -43,17 +45,21 @@ class AdminController extends Controller {
         return view('admin.motores', compact('motores'));
     }
     public function tipoV() {
-
-        return view('admin.tipovehiculo');
+       
+        return view('admin.tipovehiculo', compact('tipoVe'));
     }
     public function tablatipo(){
+       
         $tipoV = DB::table('tipovehiculos')->get();
-        return view('admin.tipovehiculo', compact('tipoV'));
+        return view('admin.tipovehiculo');
     }
 
     public function tablavehiculo(){
+        $tipomo= Motor::all();
+        $tipoVe= TipoVehiculo::all();
+        
         $vehiculo = DB::table('vehiculos')->get();
-        return view('admin.inventario', compact('vehiculo'));
+        return view('admin.inventario', compact('vehiculo','tipoVe','tipomo'));
     }
     public function agregar() {
 
@@ -68,8 +74,4 @@ class AdminController extends Controller {
 
         return view('admin.tipovehiculo');
     }
-
-
-    
-
 }

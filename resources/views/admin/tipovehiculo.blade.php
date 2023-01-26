@@ -37,7 +37,7 @@
   <br>
 
  <center>
-  <h1 class="text-3xl text-center pt-1">Agregar Motor</h1>
+  <h1 class="text-3xl text-center pt-1">Agregar tipo de  vihiculo</h1>
 
  <form action="/saveTipoVehiculo" method="POST">
   @csrf
@@ -73,7 +73,7 @@
  </TABLE>
  </form></center>
 <center>  
-<h1 class="text-3xl text-center pt-1">lista  de Tipos de Motores</h1>
+<h1 class="text-3xl text-center pt-1">lista  de Tipos de  vehiculos</h1>
 
 
 <table class="table">
@@ -92,8 +92,8 @@
     @foreach ($tipoV as $item)
     <tr>
       <th scope="row">{{ $item->id_tipoVehiculo }}</th>
-     
       <td>{{ $item->nombre }}</td>
+      
       <td> <button type="submit" class="font-bold
         py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>
         <td> <button type="submit" class="font-bold

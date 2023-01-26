@@ -14,8 +14,7 @@ class EmpresaController extends Controller
         $empresa->nombre = $request->input("nombre");
         $empresa->save();
         $empresas = Empresa::all();
-        
-        
+
         ////return redirect()->route('admin.tablaempresa');
         return redirect()->to('tablaempresa');
 

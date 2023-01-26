@@ -44,11 +44,14 @@
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
   
 	<TR>
+    <div class="col-sm-10">
+      <input name="id_vehiculo" type="text" class="form-control" id="inputid_vehiculo" placeholder="id_vehiculo">
+    </div>
 		<TD> <div class="form-group row">
-      <label for="inputMarca" class="col-sm-2 col-form-label">Marca:</label>
+      <label for="inputmarca" class="col-sm-2 col-form-label">marca:</label>
     </div></TD> 
     <TD> <div class="col-sm-10">
-      <select name="marca" type="text" class="form-control" id="inputMarca">
+      <select name="marca" type="text" class="form-control" id="inputmarca">
         <option value="TOYOTA">TOYOTA</option>
         <option value="HYSTER">HYSTER</option>
         <option value="CATERPILLAR">CATERPILLAR</option>
@@ -63,67 +66,66 @@
       </div>
     </TD>
       <TD><div class="col-sm-10">
-        <input name="modelo" type="text" class="form-control" id="inputModelo" placeholder="modelo">
+        <input name="modelo" type="text" class="form-control" id="inputmodelo" placeholder="modelo">
       </div></TD>
 
          <TD> <div class="form-group row">
-          <label for="inputSerie" class="col-sm-2 col-form-label">Serie:</label>
+          <label for="inputserie" class="col-sm-2 col-form-label">serie:</label>
         </div></TD>
          <TD><div class="col-sm-10">
-          <input name="serie" type="text" class="form-control" id="inputSerie" placeholder="numero de serie ">
+          <input name="serie" type="text" class="form-control" id="inputserie" placeholder="numero de serie ">
         </div></TD>
 	</TR>
 
 	<TR>
 		<TD>
       <div class="form-group row">
-        <label for="inputTipo" class="col-sm-2 col-form-label">Tipo de motor:</label>
+        <label for="inputid_motor " class="col-sm-2 col-form-label">tipo de motor:</label>
       </div></TD>
-    <TD><div class="col-sm-10">
-      <input name="tipo" type="text" class="form-control" id="inputTipo" placeholder="tipo de motor">
-    </div></TD>
+    <TD>
+      <select name="id_motor " type="text" class="form-control" id="inputid_motor ">
+        <option value="">--Escoja el tipo de motor--</option>
+        @foreach($tipomo as $item4)
+            <option value="$item4{{'id_motor'}}"> {{$item4['nombre']}}</option>
+        @endforeach
+      </select>
+    </TD>
 
-    <TD><div class="form-group row">
-      <label for="inputCapasidad" class="col-sm-2 col-form-label">Capasidad:</label>
+    <TD> <div class="form-group row">
+      <label for="inputcapacidad" class="col-sm-2 col-form-label">capacidad:</label>
     </div></TD>
-    <TD><div class="col-sm-10">
-      <input name="capasidad" type="text" class="form-control" id="inputCapasidad" placeholder="capasidad">
+     <TD><div class="col-sm-10">
+      <input name="capacidad" type="text" class="form-control" id="inputcapacidad" placeholder="numero de capacidad ">
     </div></TD>
 
     <TD> <div class="form-group row">
-      <label for="inputMastil" class="col-sm-2 col-form-label">Mastil:</label>
+      <label for="inputmastil" class="col-sm-2 col-form-label">mastil:</label>
     </div></TD>
     <TD>  <div class="col-sm-10">
-      <input name="mastil" type="text" class="form-control" id="inputMastil" placeholder="mastil">
+      <input name="mastil" type="text" class="form-control" id="inputmastil" placeholder="mastil">
     </div></TD>
 	</TR>
   
   <TR>
 		<TD> <div class="form-group row">
-      <label for="inputTipove" class="col-sm-2 col-form-label">Tipo de veiculo:</label>
+      <label for="inputid_tipoVehiculo " class="col-sm-2 col-form-label">Tipo de veiculo:</label>
     </div></TD>
-     <TD> <div class="col-sm-10">
-      <select name="tipove" type="text" class="form-control" id="inputTipove">
-        <option value="Montacargas">Montacargas</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-    </div></TD> 
+     <TD>
+      <select name="id_tipoVehiculo " type="text" class="form-control" id="inputid_tipoVehiculo ">
+      <option value="">--Escoja el tipo de vehiculo--</option>
+      @foreach($tipoVe as $item3)
+          <option value="$item3{{'id_tipoVehiculo'}}"> {{$item3['nombre']}}</option>
+      @endforeach
+    </select>
+  </TD> 
 
      <TD> <div class="form-group row">
-      <label for="inputEstatus" class="col-sm-2 col-form-label">Estatus:</label>
+      <label for="inputstatus" class="col-sm-2 col-form-label">status:</label>
     </div></TD>
-     <TD> <div class="col-sm-10">
-      <select name="estatus" type="text" class="form-control" id="inputEstatus">
-        <option value="veiculo en disponible">veiculo en disponible</option>
-        <option value="veiculo en renta ">veiculo en renta </option>
-        <option value="veiculo vendido">veiculo vendido</option>
-        <option value="veiculo en reparacion">veiculo en reparacion</option>
-       
-      
-      </select>
-    </div></TD>  
+     <TD><div class="col-sm-10">
+      <input name="status" type="text" class="form-control" id="inputstatus" placeholder="numero de status ">
+    </div>
+  </TD>  
      <TD><div class="form-group row">
       <div class="col-sm-10">
         <button type="submit" class="font-bold
@@ -146,18 +148,18 @@
  <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      
-      <th scope="col">Marca</th>
+      <th scope="col">id vehiculo</th>
+      <th scope="col">marca</th>
       <th scope="col">Modelo</th>
-      <th scope="col">Serie</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Capasidad</th>
+      <th scope="col">Capacidad</th>
       <th scope="col">Mastil</th>
+      <th scope="col">Serie</th>
+      <th scope="col">status</th>
+      <th scope="col">Tipo de motor</th>
       <th scope="col">Tipo de vehiculo</th>
-      <th scope="col">Estatus</th>
+    
      <th>Mas</th>
-
+     
    
     </tr>
   </thead>
@@ -165,15 +167,16 @@
     
     @foreach ($vehiculo as $item2)
     <tr>
-      <th scope="row">{{ $item2->id }}</th>
+    <th scope="row">{{ $item2->id_vehiculo}}</th>
       <td>{{ $item2->marca }}</td>
       <td>{{ $item2->modelo }}</td>
-      <td>{{ $item2->Serie}}</td>
-      <td>{{ $item2->tipo }}</td>
-      <td>{{ $item2->capasidad }}</td>
+      <td>{{ $item2->capacidad }}</td>
       <td>{{ $item2->mastil }}</td>
-      <td>{{ $item2->tipove}}</td>
-      <td>{{ $item2->estatus }}</td>
+      <td>{{ $item2->serie}}</td>
+      <td>{{ $item2->status }}</td>
+      <td>{{ $item2->id_motor }}</td>
+      <td>{{ $item2->id_tipoVehiculo }}</td>
+     
 
       <td> <button type="submit" class="font-bold
         py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>

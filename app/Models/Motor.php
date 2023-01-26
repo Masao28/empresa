@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Motor extends Model
 {
     use HasFactory;
+
+    
     protected $table = 'motores';
     //protected $primaryKey = 'id';
     protected $fillable = [
