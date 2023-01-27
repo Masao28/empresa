@@ -44,6 +44,9 @@
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
   
 	<TR>
+
+    
+
     <div class="col-sm-10">
       <input name="id_vehiculo" type="text" class="form-control" id="inputid_vehiculo" placeholder="id_vehiculo">
     </div>
@@ -80,13 +83,12 @@
 	<TR>
 		<TD>
       <div class="form-group row">
-        <label for="inputid_motor " class="col-sm-2 col-form-label">tipo de motor:</label>
+        <label for="inputid_motor" class="col-sm-2 col-form-label">tipo de motor:</label>
       </div></TD>
     <TD>
-      <select name="id_motor " type="text" class="form-control" id="inputid_motor ">
-        <option value="">--Escoja el tipo de motor--</option>
-        @foreach($tipomo as $item4)
-            <option value="$item4{{'id_motor'}}"> {{$item4['nombre']}}</option>
+      <select name="id_motor" class="form-control" id="inputid_motor">
+        @foreach($tipomo as $itemM)
+        <option value="{{ $itemM->id_motor}}"> {{ $itemM->nombre }} </option>
         @endforeach
       </select>
     </TD>
@@ -111,14 +113,15 @@
       <label for="inputid_tipoVehiculo " class="col-sm-2 col-form-label">Tipo de veiculo:</label>
     </div></TD>
      <TD>
-      <select name="id_tipoVehiculo " type="text" class="form-control" id="inputid_tipoVehiculo ">
-      <option value="">--Escoja el tipo de vehiculo--</option>
-      @foreach($tipoVe as $item3)
-          <option value="$item3{{'id_tipoVehiculo'}}"> {{$item3['nombre']}}</option>
+      
+      <select name="id_tipoVehiculo" type="text" class="form-control" id="inputid_tipoVehiculo ">
+      @foreach($tipoVe as $itemTV)
+      <option value="{{ $itemTV->id_tipoVehiculo }}"> {{ $itemTV->nombre }} </option>
+     
+      
       @endforeach
     </select>
   </TD> 
-
      <TD> <div class="form-group row">
       <label for="inputstatus" class="col-sm-2 col-form-label">status:</label>
     </div></TD>
@@ -151,12 +154,12 @@
       <th scope="col">id vehiculo</th>
       <th scope="col">marca</th>
       <th scope="col">Modelo</th>
+      <th scope="col">Serie</th>
+      <th scope="col">Tipo de motor</th>
       <th scope="col">Capacidad</th>
       <th scope="col">Mastil</th>
-      <th scope="col">Serie</th>
-      <th scope="col">status</th>
-      <th scope="col">Tipo de motor</th>
       <th scope="col">Tipo de vehiculo</th>
+      <th scope="col">status</th>
     
      <th>Mas</th>
      
@@ -165,17 +168,17 @@
   </thead>
   <tbody>
     
-    @foreach ($vehiculo as $item2)
+    @foreach ($vehiculo as $itemvehiculo)
     <tr>
-    <th scope="row">{{ $item2->id_vehiculo}}</th>
-      <td>{{ $item2->marca }}</td>
-      <td>{{ $item2->modelo }}</td>
-      <td>{{ $item2->capacidad }}</td>
-      <td>{{ $item2->mastil }}</td>
-      <td>{{ $item2->serie}}</td>
-      <td>{{ $item2->status }}</td>
-      <td>{{ $item2->id_motor }}</td>
-      <td>{{ $item2->id_tipoVehiculo }}</td>
+    <th scope="row">{{ $itemvehiculo->id_vehiculo}}</th>
+      <td>{{ $itemvehiculo->marca }}</td>
+      <td>{{ $itemvehiculo->modelo }}</td>
+      <td>{{ $itemvehiculo->serie}}</td>
+      <td>{{ $itemvehiculo->id_motor}}</td>
+      <td>{{ $itemvehiculo->capacidad }}</td>
+      <td>{{ $itemvehiculo->mastil }}</td>
+      <td>{{ $itemvehiculo->id_tipoVehiculo}}</td>
+      <td>{{ $itemvehiculo->status }}</td>
      
 
       <td> <button type="submit" class="font-bold

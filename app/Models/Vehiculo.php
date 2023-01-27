@@ -2,6 +2,8 @@
 
 namespace App\Models;
 use App\Models\Vehiculo;
+use App\Models\Motor;
+use App\Models\TipoVehiculo;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,8 +21,8 @@ class Vehiculo extends Model
     'status',
     'id_motor',
     'id_tipoVehiculo'
-
-
     ];
+  
+    
   
 }

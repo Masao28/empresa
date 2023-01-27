@@ -42,6 +42,7 @@ class AdminController extends Controller {
     }
     public function tablamotor(){
         $motores = DB::table('motores')->get();
+       
         return view('admin.motores', compact('motores'));
     }
     public function tipoV() {

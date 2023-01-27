@@ -13,6 +13,6 @@ class Motor extends Model
     protected $table = 'motores';
     //protected $primaryKey = 'id';
     protected $fillable = [
-   'nombre'
+   'id_motor','nombre'
     ];
 }

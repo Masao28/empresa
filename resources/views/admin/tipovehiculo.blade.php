@@ -89,10 +89,10 @@
   </thead>
   <tbody>
     
-    @foreach ($tipoV as $item)
+    @foreach ($tipoV as $itemtipovehiculo)
     <tr>
-      <th scope="row">{{ $item->id_tipoVehiculo }}</th>
-      <td>{{ $item->nombre }}</td>
+      <th scope="row">{{ $itemtipovehiculo->id_tipoVehiculo }}</th>
+      <td>{{ $itemtipovehiculo->nombre }}</td>
       
       <td> <button type="submit" class="font-bold
         py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>

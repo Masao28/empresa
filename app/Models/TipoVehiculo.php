@@ -11,6 +11,10 @@ class TipoVehiculo extends Model
     protected $table = 'tipovehiculos';
     //protected $primaryKey = 'id';
     protected $fillable = [
-   'nombre'
+   'id_tipoVehiculo','nombre'
     ];
+    public function tipoVehiculo(){
+        return $this->belongsTo(TipoVehiculo::clas,'id_tipoVehiculo','nombre');
+       }
+    
 }

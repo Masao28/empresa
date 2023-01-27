@@ -18,9 +18,10 @@ class VehiculoController extends Controller
         $vehiculo->status = $request->input("status");
         $vehiculo->id_motor = $request->input("id_motor");
         $vehiculo->id_tipoVehiculo = $request->input("id_tipoVehiculo");
-
+        
         $vehiculo->save();
         $vehiculos = Vehiculo::all();
+        
         ////return view("admin.inventario");
         return redirect()->to('tablavehiculo');
     }
