@@ -37,12 +37,10 @@ class AdminController extends Controller {
         return view('admin.empresa', compact('empresa'));
     }
     public function motor() {
-
         return view('admin.motores');
     }
     public function tablamotor(){
         $motores = DB::table('motores')->get();
-       
         return view('admin.motores', compact('motores'));
     }
     public function tipoV() {
@@ -55,12 +53,20 @@ class AdminController extends Controller {
         return view('admin.tipovehiculo', compact('tipoV'));
     }
    
+    public function vehiculo() {
+        $motores = Motor::all();
+        return view('admin.vehiculo')
+        ->with(['motores' => $motores]);
+    }
     public function tablavehiculo(){
-        $tipomo= Motor::all();
-        $tipoVe= TipoVehiculo::all();
-        
-        $vehiculo = DB::table('vehiculos')->get();
-        return view('admin.inventario', compact('vehiculo','tipoVe','tipomo'));
+        $vehiculos = DB::table('vehiculos')
+        ->join('motores', 'vehiculos.id_motor', '=', 'motores.id_motor')
+        ->join('tipovehiculos', 'vehiculos.id_tipoVehiculo', '=', 'tipovehiculos.id_tipoVehiculo')
+        ->select('motores.nombre as motor', 'motores.id_motor as idM', 'tipovehiculos.nombre as tipo', 'tipovehiculos.id_tipoVehiculo as idTipo', 'vehiculos.*')
+        ->orderByDesc('vehiculos.id_vehiculo')
+        ->get();
+        return view("admin/inventario")
+        ->with(['vehiculos'=> $vehiculos]);
     }
     public function agregar() {
 
