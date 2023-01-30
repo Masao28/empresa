@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Empresa;
-use App\Models\Vehiculo;
 use App\Models\TipoVehiculo;
 use App\Models\Motor;
 
@@ -56,17 +55,18 @@ class AdminController extends Controller {
         return view('admin.tipovehiculo', compact('tipoV'));
     }
    
-    public function vehiculo() {
-        $motores = Motor::all();
-        return view('admin.vehiculo')
-        ->with(['motores' => $motores]);
-    }
+    
     public function tablavehiculo(){
         $motor=Motor::all();
         $tipoV=TipoVehiculo::all();
-        $vehiculo=Vehiculo::all();
+        $vehiculos = DB::table('vehiculos')
+        ->join('motores', 'vehiculos.id_motor', '=', 'motores.id_motor')
+        ->join('tipovehiculos', 'vehiculos.id_tipoVehiculo', '=', 'tipovehiculos.id_tipoVehiculo')
+        ->select('motores.nombre as motor', 'motores.id_motor as idM', 'tipovehiculos.nombre as tipo', 'tipovehiculos.id_tipoVehiculo as idTipo', 'vehiculos.*')
+        ->orderBy('vehiculos.id_vehiculo','asc')
+        ->get();
         return view('admin.inventario',
-        compact('motor', 'tipoV','vehiculo'));
+        compact('motor', 'tipoV','vehiculos'));
     }
     public function agregar() {
 

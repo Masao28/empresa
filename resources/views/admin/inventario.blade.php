@@ -171,7 +171,7 @@
      </thead>
      <tbody>
 
-       @foreach ($vehiculo as $itemvehiculo)
+       @foreach ($vehiculos as $itemvehiculo)
        <tr>
        <th scope="row">{{ $itemvehiculo->id_vehiculo}}</th>
          <td >{{ $itemvehiculo->marca }}</td>
