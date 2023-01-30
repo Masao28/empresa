@@ -42,53 +42,67 @@
      @csrf
       <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
       	<TR>
-      		<TD> <div class="form-group row">
-           <label for="inputmarca" class="col-sm-2 col-form-label">marca:</label>
-         </div></TD> 
-         <TD> <div class="col-sm-10">
-           <select name="marca" type="text" class="form-control" id="inputmarca">
-             <option value="TOYOTA">TOYOTA</option>
-             <option value="HYSTER">HYSTER</option>
-             <option value="CATERPILLAR">CATERPILLAR</option>
-             <option value="YALE">YALE</option>
-             <option value="MITSUBISHI">MITSUBISHI</option>
-             <option value="NISSAN">NISSAN</option>
-           </select></div></TD> 
-
-           <TD><div class="form-group row">
+      		<TD> 
+            <div class="form-group row">
+              <label for="inputmarca" class="col-sm-2 col-form-label">marca:</label>
+            </div>
+          </TD> 
+          <TD> 
+            <div class="col-sm-10">
+              <select name="marca" type="text" class="form-control" id="inputmarca">
+                <option value="TOYOTA">TOYOTA</option>
+                <option value="HYSTER">HYSTER</option>
+                <option value="CATERPILLAR">CATERPILLAR</option>
+                <option value="YALE">YALE</option>
+                <option value="MITSUBISHI">MITSUBISHI</option>
+                <option value="NISSAN">NISSAN</option>
+              </select>
+            </div>
+          </TD> 
+          <TD>
+            <div class="form-group row">
              <label for="inputmodelo" class="col-sm-2 col-form-label">Modelo:</label>
-
-           </div>
-         </TD>
-           <TD><div class="col-sm-10">
+            </div>
+          </TD>
+          <TD>
+            <div class="col-sm-10">
              <input name="modelo" type="text" class="form-control" id="inputmodelo" placeholder="modelo">
-           </div></TD>
-         
-              <TD> <div class="form-group row">
+            </div>
+          </TD>
+          <TD> 
+            <div class="form-group row">
                <label for="inputserie" class="col-sm-2 col-form-label">serie:</label>
-             </div></TD>
-              <TD><div class="col-sm-10">
+            </div>
+          </TD>
+          <TD>
+            <div class="col-sm-10">
                <input name="serie" type="text" class="form-control" id="inputserie" placeholder="numero de serie ">
-             </div></TD>
+             </div>
+            </TD>
       	</TR>
       	<TR>
       		<TD>
            <div class="form-group row">
              <label for="inputid_motor" class="col-sm-2 col-form-label">tipo de motor:</label>
-           </div></TD>
-         <TD>
-           <select name="id_motor" class="form-control" id="inputid_motor">
-             @foreach($vehiculos as $itemM)
-             <option value="{{ $itemM->idM}}"> {{ $itemM->motor }} </option>
+           </div>
+          </TD>
+          <TD>
+            <select name="id_motor" class="form-control" id="inputid_motor">
+             @foreach($motor as $itemM)
+             <option value="{{ $itemM->id_motor}}"> {{ $itemM->nombre}} </option>
              @endforeach
-           </select>
-         </TD>
-         <TD> <div class="form-group row">
-           <label for="inputcapacidad" class="col-sm-2 col-form-label">capacidad:</label>
-         </div></TD>
-          <TD><div class="col-sm-10">
-           <input name="capacidad" type="text" class="form-control" id="inputcapacidad" placeholder="numero de capacidad ">
-         </div></TD>
+            </select>
+          </TD>
+          <TD> 
+            <div class="form-group row">
+             <label for="inputcapacidad" class="col-sm-2 col-form-label">capacidad:</label>
+            </div>
+          </TD>
+          <TD>
+            <div class="col-sm-10">
+              <input name="capacidad" type="text" class="form-control" id="inputcapacidad" placeholder="numero de capacidad ">
+            </div>
+            </TD>
          <TD> <div class="form-group row">
            <label for="inputmastil" class="col-sm-2 col-form-label">mastil:</label>
          </div></TD>
@@ -104,8 +118,8 @@
           <TD>
           
            <select name="id_tipoVehiculo" type="text" class="form-control" id="inputid_tipoVehiculo ">
-           @foreach($vehiculos as $itemTV)
-           <option value="{{ $itemTV->idTipo}}"> {{ $itemTV->tipo }} </option>
+           @foreach($tipoV as $itemTV)
+           <option value="{{ $itemTV->id_tipoVehiculo}}"> {{ $itemTV->nombre }} </option>
 
 
            @endforeach
@@ -157,7 +171,7 @@
      </thead>
      <tbody>
 
-       @foreach ($vehiculos as $itemvehiculo)
+       @foreach ($vehiculo as $itemvehiculo)
        <tr>
        <th scope="row">{{ $itemvehiculo->id_vehiculo}}</th>
          <td >{{ $itemvehiculo->marca }}</td>
