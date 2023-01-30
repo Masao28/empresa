@@ -183,7 +183,8 @@
          <td>{{ $itemvehiculo->tipo}}</td>
          <td>{{ $itemvehiculo->status }}</td>
          <td>
-          <a href="{{route('admin.edit',$itemvehiculo->id_vehiculo)}}"class="btn btn-warning btn-sm">editar</a>
+          <a href="{{route('admin.edit',$itemvehiculo->id_vehiculo)}} "class="font-bold
+            py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>
          </td>
            <td> <button type="submit" class="font-bold
              py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button>

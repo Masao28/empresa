@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Empresa;
 use App\Models\TipoVehiculo;
 use App\Models\Motor;
-
+use App\Models\Vehiculo;
 
 
 
@@ -83,8 +83,19 @@ class AdminController extends Controller {
     }
     public function edit($id_vehiculo)
     {
-        $vehiculo=Vehiculo::fileinode($id_vehiculo);
-        return  $vehiculo;
-       ///return view('admin.edit', compact('editarve'));
+        $vehiculo=Vehiculo::findOrFail($id_vehiculo);
+        dd($vehiculo -> allá());
+        ///return  $vehiculo;
+       //return view('admin.edit', compact('vehiculo'));
+
+       
     }
+    public function update(Request $request, $Rd_vehiculo)
+    {
+       
+       
+    }
+   
+
+
 }
