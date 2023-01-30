@@ -26,4 +26,5 @@ class VehiculoController extends Controller
         return redirect()->to('tablavehiculo');
     }
     
+    
 }
