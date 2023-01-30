@@ -168,13 +168,16 @@
          <td>{{ $itemvehiculo->mastil }}</td>
          <td>{{ $itemvehiculo->tipo}}</td>
          <td>{{ $itemvehiculo->status }}</td>
-
-
-         <td> <button type="submit" class="font-bold
-           py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>
+         <td>
+          <a href="{{route('admin.edit',$itemvehiculo->id_vehiculo)}}"  type="submit" class="font-bold
+             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>
+         </td>
            <td> <button type="submit" class="font-bold
-             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button></td>
+             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button>
+            
+        </td>
           </tr>
+
        @endforeach
      </tbody>
 </center>

@@ -41,6 +41,11 @@ Route::get('/inventario', [AdminController::class, 'inventario'])
 ->middleware('auth.admin')
 ->name('admin.inventario');
 
+/////ruta de editar vehiculo //
+Route::get('/edit', [AdminController::class, 'edit'])
+->middleware('auth.admin')
+->name('admin.edit');
+
 ////ruta  de  Montacargasdeentrada
 Route::get('/MontacargasE', [AdminController::class, 'MontacargasE'])
 ->middleware('auth.admin')

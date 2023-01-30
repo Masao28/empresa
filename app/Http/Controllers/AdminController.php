@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Empresa;
 use App\Models\TipoVehiculo;
 use App\Models\Motor;
+use App\Models\Vehiculo;
 
 
 class AdminController extends Controller {
@@ -80,5 +81,11 @@ class AdminController extends Controller {
     public function vitatipovehiculo() {
 
         return view('admin.tipovehiculo');
+    }
+    public function edit($id_vehiculo)
+    {
+        $itemvehiculo=Vehiculo::fileinode($id_vehiculo);
+        return $itemvehiculo;
+        ///return view('admin.edit', compact('itemvehiculo'));
     }
 }
