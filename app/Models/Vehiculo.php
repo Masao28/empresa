@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     protected $guarded = [ 
-    'id_vehiculo',
     'marca',
     'modelo',
     'capasidad',
@@ -22,6 +21,7 @@ class Vehiculo extends Model
     'id_motor',
     'id_tipoVehiculo'
     ];
+    protected $primaryKey= 'id_vehiculo';
   
     
   

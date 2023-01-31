@@ -81,19 +81,31 @@ class AdminController extends Controller {
 
         return view('admin.tipovehiculo');
     }
-    public function edit($id_vehiculo)
+    public function edit(Vehiculo $id_vehiculo)
     {
-        $vehiculo=Vehiculo::findOrFail($id_vehiculo);
-        dd($vehiculo -> allá());
+        $motor = Motor::all();
+        $tipoV = TipoVehiculo::all();
+        $vehiculos=Vehiculo::find($id_vehiculo);
+        //dd($vehiculo -> all());
         ///return  $vehiculo;
-       //return view('admin.edit', compact('vehiculo'));
-
+       return view("admin.edit")
+       ->with(['vehiculos'=>$id_vehiculo])
+       ->with(['motor'=>$motor])
+       ->with(['tipoV'=>$tipoV]);
        
     }
-    public function update(Request $request, $Rd_vehiculo)
-    {
-       
-       
+    public function salvar(Vehiculo $id_vehiculo, Request $request){
+    $query= Vehiculo::find($id_vehiculo->id_vehiculo);
+       $query->marca = $request->marca;
+       $query->modelo = $request->modelo;
+       $query->capacidad = $request->capacidad;
+       $query->mastil = $request->mastil;
+       $query->serie = $request->serie;
+       $query->status = $request->status;
+       $query->id_motor = $request->id_motor;
+       $query->id_tipoVehiculo = $request->id_tipoVehiculo;
+       $query->save();
+       return redirect()->route("admin.inventario", ['id_vehiculo' =>$id_vehiculo->id_vehiculo]);
     }
    
 

@@ -38,8 +38,9 @@
 
     <center>
      <h1 class="text-2xl text-center pt-1">Editar vehiculo</h1>
-    <form action="{{route('admin.update',$itemvehiculo->id_vehiculo)}}" method="POST">
-     @csrf
+    <form action="{{route('salvar',['id_vehiculo'=> $vehiculos->id_vehiculo])}}" method="POST">
+      {{ csrf_field() }}
+      {{ method_field('PUT') }}
       <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
       	<TR>
       		<TD> 
@@ -49,7 +50,7 @@
           </TD> 
           <TD> 
             <div class="col-sm-10">
-              <select name="marca" type="text" class="form-control" id="inputmarca" value="{{$itemvehiculo->marca}}">
+              <select name="marca" type="text" class="form-control" id="inputmarca" value="{{$vehiculos->marca}}">
                 <option value="TOYOTA">TOYOTA</option>
                 <option value="HYSTER">HYSTER</option>
                 <option value="CATERPILLAR">CATERPILLAR</option>
@@ -66,7 +67,7 @@
           </TD>
           <TD>
             <div class="col-sm-10">
-             <input name="modelo" type="text" class="form-control" id="inputmodelo" placeholder="modelo" value="{{$itemvehiculo->modelo}}">
+             <input name="modelo" type="text" class="form-control" id="inputmodelo" placeholder="modelo" value="{{$vehiculos->modelo}}">
             </div>
           </TD>
           <TD> 
@@ -76,7 +77,7 @@
           </TD>
           <TD>
             <div class="col-sm-10">
-               <input name="serie" type="text" class="form-control" id="inputserie" placeholder="numero de serie " value="{{$itemvehiculo->serie}}">
+               <input name="serie" type="text" class="form-control" id="inputserie" placeholder="numero de serie " value="{{$vehiculos->serie}}">
              </div>
             </TD>
       	</TR>
@@ -87,7 +88,7 @@
            </div>
           </TD>
           <TD>
-            <select name="id_motor" class="form-control" id="inputid_motor" value="{{$itemvehiculo->id_motor}}">
+            <select name="id_motor" class="form-control" id="inputid_motor" value="{{$vehiculos->id_motor}}">
              @foreach($motor as $itemM)
              <option value="{{ $itemM->id_motor}}"> {{ $itemM->nombre}} </option>
              @endforeach
@@ -100,14 +101,14 @@
           </TD>
           <TD>
             <div class="col-sm-10">
-              <input name="capacidad" type="text" class="form-control" id="inputcapacidad" placeholder="numero de capacidad " value="{{$itemvehiculo->capasidad}}">
+              <input name="capacidad" type="text" class="form-control" id="inputcapacidad" placeholder="numero de capacidad " value="{{$vehiculos->capacidad}}">
             </div>
             </TD>
          <TD> <div class="form-group row">
            <label for="inputmastil" class="col-sm-2 col-form-label">mastil:</label>
          </div></TD>
          <TD>  <div class="col-sm-10">
-           <input name="mastil" type="text" class="form-control" id="inputmastil" placeholder="mastil" value="{{$itemvehiculo->mastil}}">
+           <input name="mastil" type="text" class="form-control" id="inputmastil" placeholder="mastil" value="{{$vehiculos->mastil}}">
          </div></TD>
       	</TR>
       
@@ -117,7 +118,7 @@
          </div></TD>
           <TD>
           
-           <select name="id_tipoVehiculo" type="text" class="form-control" id="inputid_tipoVehiculo " value="{{$itemvehiculo->id_tipoVehiculo}}">
+           <select name="id_tipoVehiculo" type="text" class="form-control" id="inputid_tipoVehiculo " value="{{$vehiculos->id_tipoVehiculo}}">
            @foreach($tipoV as $itemTV)
            <option value="{{ $itemTV->id_tipoVehiculo}}"> {{ $itemTV->nombre }} </option>
 
@@ -129,7 +130,7 @@
            <label for="inputstatus" class="col-sm-2 col-form-label">status:</label>
          </div></TD>
           <TD><div class="col-sm-10">
-           <input name="status" type="text" class="form-control" id="inputstatus" placeholder="numero de status " value="{{$itemvehiculo->estatus}}">
+           <input name="status" type="text" class="form-control" id="inputstatus" placeholder="numero de status " value="{{$vehiculos->status}}">
          </div>
        </TD>  
           <TD><div class="form-group row">
