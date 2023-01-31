@@ -186,8 +186,10 @@
           <a href="{{route('admin/edit',['id_vehiculo'=>$itemvehiculo->id_vehiculo])}}" class="font-bold
             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>
          </td>
-           <td> <button type="submit" class="font-bold
-             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button>
+           <td>
+            
+            <a href="{{ route('borrarvehiculo', ['id_vehiculo'=>$itemvehiculo->id_vehiculo])}}"  class="font-bold
+              py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Borrar</a>
             
         </td>
           </tr>

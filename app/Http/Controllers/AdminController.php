@@ -81,6 +81,7 @@ class AdminController extends Controller {
 
         return view('admin.tipovehiculo');
     }
+    //Editar vehiculo
     public function edit(Vehiculo $id_vehiculo)
     {
         $motor = Motor::all();
@@ -107,6 +108,11 @@ class AdminController extends Controller {
        $query->save();
        return redirect()->route("admin.inventario", ['id_vehiculo' =>$id_vehiculo->id_vehiculo]);
     }
+ //////////////Borrar vehiculo
+    public function borrarV(Vehiculo $id_vehiculo, Request $request){
+        $id_vehiculo->delete();
+        return redirect()->route("admin.inventario");
+        }
    
 
 

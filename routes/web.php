@@ -36,16 +36,17 @@ Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth.admin')
     ->name('admin.index');
     
-////ruta  de inventario  
+///////////////////////ruta  de inventario  vehiculo////////////////////
 Route::get('/inventario', [AdminController::class, 'inventario'])
 ->middleware('auth.admin')
 ->name('admin.inventario');
-
-/////ruta de editar vehiculo //
+///////////////////////editar vehiculo //////////////////
 Route::name('admin/edit')->get('edit/{id_vehiculo}', [AdminController::class, 'edit'])
 ->middleware('auth.admin');
 Route::name('salvar')->put('salvar/{id_vehiculo}', [AdminController::class, 'salvar'])
 ->middleware('auth.admin');
+//////////////////Borrar vehioculo//////////////////
+Route::name('borrarvehiculo')->get('borrarV/{id_vehiculo}', [AdminController::class, 'borrarV']);
 
 ////ruta  de  Montacargasdeentrada
 Route::get('/MontacargasE', [AdminController::class, 'MontacargasE'])
