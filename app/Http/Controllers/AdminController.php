@@ -114,10 +114,11 @@ class AdminController extends Controller {
         return redirect()->route("admin.inventario");
         }
 ////////Editar empresa
-    public function edit2(Empresa $id_empresa)
-    {
-        $empresa=Empresa::find($id_empresa);
-       return view("admin.edit2");
+    public function edit2(Empresa $id_empresa){
+        
+    $empresas=Empresa::find($id_empresa);
+       return view("admin.edit2")
+       ->with(['empresas'=>$id_empresa]);
       
     }
     
@@ -129,10 +130,50 @@ class AdminController extends Controller {
         }
 
    ///////borrar empresa
-        public function borrarE(Empresa $id_empresa, Request $request){
-            $id_empresa->delete();
+    public function borrarE(Empresa $id_empresa, Request $request){
+         $id_empresa->delete();
             return redirect()->route("admin.empresa");
             }
 
+///////borrar motores
+    public function borrarM(Motor $id_motor, Request $request){
+    $id_motor->delete();
+    return redirect()->route("admin.motores");
+    }
 
+    ////////Editar motores 
+    public function edit3(Motor $id_motor){
+        
+        $motores=Motor::find($id_motor);
+           return view("admin.edit3")
+           ->with(['motores'=>$id_motor]);
+          
+        }
+    public function salvar3(Motor $id_motor, Request $request){
+            $query= Motor::find($id_motor->id_motor);
+               $query->nombre = $request->nombre;
+               $query->save();
+               return redirect()->route("admin.motores", ['id_motor' =>$id_motor->id_motor]);
+            }
+
+    ///////borrar tipo de vehiculo
+    public function borrarTV(TipoVehiculo $id_tipoVehiculo, Request $request){
+        $id_tipoVehiculo->delete();
+        return redirect()->route("admin.tipovehiculo");
+        }
+
+          ////////Editar tipo de vehiculo 
+    public function edit4(TipoVehiculo $id_tipoVehiculo){
+        
+        $vehiculotipo=TipoVehiculo::find($id_tipoVehiculo);
+           return view("admin.edit4")
+           ->with(['vehiculotipo'=>$id_tipoVehiculo]);
+          
+        }
+    public function salvar4(TipoVehiculo $id_tipoVehiculo, Request $request){
+            $query= TipoVehiculo::find($id_tipoVehiculo->id_tipoVehiculo);
+               $query->nombre = $request->nombre;
+               $query->save();
+               return redirect()->route("admin.tipovehiculo", ['id_tipoVehiculo' =>$id_tipoVehiculo->id_tipoVehiculo]);
+            }
 }

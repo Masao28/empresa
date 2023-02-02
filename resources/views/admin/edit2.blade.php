@@ -39,7 +39,7 @@
  <center>
     <h1 class="text-2xl text-center pt-1">Editar empresa</h1>
     
-    <form action="{{route('salvar2',['id_empresa'=> $empresa->id_empresa])}}" method="POST">
+    <form action="{{route('salvar2',['id_empresa'=>$empresas->id_empresa])}}" method="POST">
       {{ csrf_field() }}
       {{ method_field('PUT') }}
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
@@ -49,7 +49,7 @@
       <label for="inputEmpresa" class="col-sm-2 col-form-label">Nombre de la empresa:</label>
     </div></TD> 
     <TD> <div class="col-sm-10">
-        <input name="nombre" type="text" class="form-control" id="inputEmpresa" placeholder="Nombre de la empresa"  value="{{$empresa->nombre}}">
+        <input name="nombre" type="text" class="form-control" id="inputnombre" placeholder="Nombre de la empresa"  value="{{$empresas->nombre}}">
       </div>
     </TD> 
 

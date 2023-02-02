@@ -132,21 +132,27 @@
            <input name="status" type="text" class="form-control" id="inputstatus" placeholder="numero de status ">
          </div>
        </TD>  
-          <TD><div class="form-group row">
-           <div class="col-sm-10">
-             <button type="submit" class="font-bold
-             py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
-           </div>
+          <TD><label for="inputimagen" class="col-sm-2 col-form-label">imagen:</label>
          </div></TD>  
-          <TD> <div class="w-1/1 px-0 mr-auto">
-             <a href="{{ route('admin.maquinaria') }}" class="font-bold
-          
-             py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
-          
-           </div></TD>  
-         
+          <TD> 
+            <input type="file" name="image" placeholder="Choose image" id="image">
+          </TD> 
        <TR>
       	</TR>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="font-bold py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
+            </div>
+          </td>
+          <td><div class="w-1/1 px-0 mr-auto">
+            <a href="{{ route('admin.maquinaria') }}" class="font-bold py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
+          </div></td>
+          <td></td>
+          <td></td>
+        </tr>
       </TABLE>
     </form>
     <h1 class="text-2x1 text-center pt-2">Lista de vehiculos</h1>
@@ -155,14 +161,15 @@
      <thead cclass="table-light">
        <tr>
          <th scope="col">id vehiculo</th>
-         <th scope="col">marca</th>
+         <th scope="col">Marca</th>
          <th scope="col">Modelo</th>
          <th scope="col">Serie</th>
          <th scope="col">Tipo de motor</th>
          <th scope="col">Capacidad</th>
          <th scope="col">Mastil</th>
          <th scope="col">Tipo de vehiculo</th>
-         <th scope="col">status</th>
+         <th scope="col">Status</th>
+         <th scope="col">Imagen</th>
 
         <th>Mas</th>
 
@@ -182,6 +189,7 @@
          <td>{{ $itemvehiculo->mastil }}</td>
          <td>{{ $itemvehiculo->tipo}}</td>
          <td>{{ $itemvehiculo->status }}</td>
+         <td>IMAGEN...</td>
          <td>
           <a href="{{route('admin/edit',['id_vehiculo'=>$itemvehiculo->id_vehiculo])}}" class="font-bold
             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>

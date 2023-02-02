@@ -73,6 +73,7 @@
  </TABLE>
  </form></center>
 <center>  
+
 <h1 class="text-3xl text-center pt-1">lista  de Empresa</h1>
 
 
@@ -95,11 +96,15 @@
      
       <td>{{ $item->nombre }}</td>
       <td>    <a href="{{route('admin/edit2',['id_empresa'=>$item->id_empresa])}}" class="font-bold
-        py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a></td>
+        py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">editar</a></td>
         <td>
 
           <a href="{{ route('borrarempresa', ['id_empresa'=>$item->id_empresa])}}"  class="font-bold
           py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Borrar</a></td>
+          <td>
+
+            <a href=""  class="font-bold
+            py-1 px-3 rounded-md bg-purple-200 hover:bg-purple-400">Detalle</a></td>
        </tr>
     @endforeach
   </tbody>

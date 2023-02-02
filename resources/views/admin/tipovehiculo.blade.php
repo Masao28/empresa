@@ -94,10 +94,11 @@
       <th scope="row">{{ $itemtipovehiculo->id_tipoVehiculo }}</th>
       <td>{{ $itemtipovehiculo->nombre }}</td>
       
-      <td> <button type="submit" class="font-bold
-        py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">Editar</button></td>
-        <td> <button type="submit" class="font-bold
-          py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Eliminar</button></td>
+      <td> <a href="{{route('admin/edit4',['id_tipoVehiculo'=>$itemtipovehiculo->id_tipoVehiculo])}}" class="font-bold
+        py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">editar</a></td>
+
+        <td>    <a href="{{ route('borrartipovehiculo', ['id_tipoVehiculo'=>$itemtipovehiculo->id_tipoVehiculo])}}"  class="font-bold
+          py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Borrar</a></td>
        </tr>
     @endforeach
   </tbody>

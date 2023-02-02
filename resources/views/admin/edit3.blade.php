@@ -37,8 +37,11 @@
   <br>
 
  <center>
-  <h1 class="text-3xl text-center pt-1">Agregar Motor</h1>
+  <h1 class="text-3xl text-center pt-1">Editar Motor</h1>
 
+  <form action="{{route('salvar3',['id_motor'=>$motores->id_motor])}}" method="POST">
+    {{ csrf_field() }}
+    {{ method_field('PUT') }}
  <form action="/saveMotor" method="POST">
   @csrf
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
@@ -48,7 +51,7 @@
       <label for="inputEmpresa" class="col-sm-2 col-form-label">Nombre del motor:</label>
     </div></TD> 
     <TD> <div class="col-sm-10">
-        <input name="nombre" type="text" class="form-control" id="inputMotor" placeholder="Nombre del motor">
+        <input name="nombre" type="text" class="form-control" id="inputMotor" placeholder="Nombre del motor"  value="{{$motores->nombre}}">
       </div>
     </TD> 
 
@@ -72,41 +75,3 @@
 	</TR>
  </TABLE>
  </form></center>
-<center>  
-<h1 class="text-3xl text-center pt-1">lista  de Motores</h1>
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-    
-      <th scope="col">Nombre</th>
-     <th>Mas</th>
-
-   
-    </tr>
-  </thead>
-  <tbody>
-    
-    @foreach ($motores as $itemmotor)
-    <tr>
-      <th scope="row">{{ $itemmotor->id_motor }}</th>
-    
-      <td>{{ $itemmotor->nombre }}</td>
-      
-      <td>   <a href="{{route('admin/edit3',['id_motor'=>$itemmotor->id_motor])}}" class="font-bold
-        py-1 px-3 rounded-md bg-yellow-200 hover:bg-yellow-400">editar</a></td>
-     
-        <td> <a href="{{ route('borrarmotor', ['id_motor'=>$itemmotor->id_motor])}}"  class="font-bold
-          py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Borrar</a></td>
-       </tr>
-    @endforeach
-  </tbody>
-</table></center>
-
-
-
-
-</body>
-</html>

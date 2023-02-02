@@ -53,12 +53,32 @@ Route::name('admin/edit2')->get('edit2/{id_empresa}', [AdminController::class, '
 Route::name('salvar2')->put('salvar2/{id_empresa}', [AdminController::class, 'salvar2'])
 ->middleware('auth.admin');
 
+///////////////////////editar motor //////////////////
+Route::name('admin/edit3')->get('edit3/{id_motor}', [AdminController::class, 'edit3'])
+->middleware('auth.admin');
+
+Route::name('salvar3')->put('salvar3/{id_motor}', [AdminController::class, 'salvar3'])
+->middleware('auth.admin');
+
+///////////////////////editar tipo de vehiculo //////////////////
+Route::name('admin/edit4')->get('edit4/{id_tipoVehiculo}', [AdminController::class, 'edit4'])
+->middleware('auth.admin');
+
+Route::name('salvar4')->put('salvar4/{id_tipoVehiculo}', [AdminController::class, 'salvar4'])
+->middleware('auth.admin');
+
 
 //////////////////Borrar vehioculo//////////////////
 Route::name('borrarvehiculo')->get('borrarV/{id_vehiculo}', [AdminController::class, 'borrarV']);
 
 //////////////////Borrar empresa//////////////////
 Route::name('borrarempresa')->get('borrarE/{id_empresa}', [AdminController::class, 'borrarE']);
+
+//////////////////Borrar motor//////////////////
+Route::name('borrarmotor')->get('borrarM/{id_motor}', [AdminController::class, 'borrarM']);
+
+//////////////////Borrar tipo vehiculo//////////////////
+Route::name('borrartipovehiculo')->get('borrarTV/{id_tipoVehiculo}', [AdminController::class, 'borrarTV']);
 
 ////ruta  de  Montacargasdeentrada
 Route::get('/MontacargasE', [AdminController::class, 'MontacargasE'])
@@ -124,6 +144,9 @@ Route::get('/regresaragregar', [AdminController::class, 'regresaragregar'])
 Route::get('/vitatipovehiculo', [AdminController::class, 'vitatipovehiculo'])
 ->middleware('auth.admin')
 ->name('admin.vitatipovehiculo');
+
+
+
 
 
 
