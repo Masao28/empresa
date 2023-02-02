@@ -19,7 +19,9 @@ class Vehiculo extends Model
     'serie',
     'status',
     'id_motor',
-    'id_tipoVehiculo'
+    'id_tipoVehiculo',
+    'fecha',
+    
     ];
     protected $primaryKey= 'id_vehiculo';
   

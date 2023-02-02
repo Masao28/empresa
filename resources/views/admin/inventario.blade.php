@@ -44,7 +44,7 @@
       	<TR>
       		<TD> 
             <div class="form-group row">
-              <label for="inputmarca" class="col-sm-2 col-form-label">marca:</label>
+              <label for="inputmarca" class="col-sm-2 col-form-label">Marca:</label>
             </div>
           </TD> 
           <TD> 
@@ -71,7 +71,7 @@
           </TD>
           <TD> 
             <div class="form-group row">
-               <label for="inputserie" class="col-sm-2 col-form-label">serie:</label>
+               <label for="inputserie" class="col-sm-2 col-form-label">Serie:</label>
             </div>
           </TD>
           <TD>
@@ -83,7 +83,7 @@
       	<TR>
       		<TD>
            <div class="form-group row">
-             <label for="inputid_motor" class="col-sm-2 col-form-label">tipo de motor:</label>
+             <label for="inputid_motor" class="col-sm-2 col-form-label">Tipo de motor:</label>
            </div>
           </TD>
           <TD>
@@ -95,7 +95,7 @@
           </TD>
           <TD> 
             <div class="form-group row">
-             <label for="inputcapacidad" class="col-sm-2 col-form-label">capacidad:</label>
+             <label for="inputcapacidad" class="col-sm-2 col-form-label">Capacidad:</label>
             </div>
           </TD>
           <TD>
@@ -104,7 +104,7 @@
             </div>
             </TD>
          <TD> <div class="form-group row">
-           <label for="inputmastil" class="col-sm-2 col-form-label">mastil:</label>
+           <label for="inputmastil" class="col-sm-2 col-form-label">Mastil:</label>
          </div></TD>
          <TD>  <div class="col-sm-10">
            <input name="mastil" type="text" class="form-control" id="inputmastil" placeholder="mastil">
@@ -126,22 +126,23 @@
          </select>
        </TD> 
           <TD> <div class="form-group row">
-           <label for="inputstatus" class="col-sm-2 col-form-label">status:</label>
+           <label for="inputstatus" class="col-sm-2 col-form-label">Status:</label>
          </div></TD>
           <TD><div class="col-sm-10">
            <input name="status" type="text" class="form-control" id="inputstatus" placeholder="numero de status ">
          </div>
        </TD>  
-          <TD><label for="inputimagen" class="col-sm-2 col-form-label">imagen:</label>
+          <TD><label for="inputimagen" class="col-sm-2 col-form-label">Imagen:</label>
          </div></TD>  
           <TD> 
             <input type="file" name="image" placeholder="Choose image" id="image">
+            
           </TD> 
        <TR>
       	</TR>
         <tr>
-          <td></td>
-          <td></td>
+          <td><label for="inputfecha" class="col-sm-2 col-form-label">Fecha:</label></td>
+          <td><input type="date" name="fecha" id="inputfecha" class="form-control"></td>
           <td><div class="form-group row">
             <div class="col-sm-10">
               <button type="submit" class="font-bold py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
@@ -169,8 +170,9 @@
          <th scope="col">Mastil</th>
          <th scope="col">Tipo de vehiculo</th>
          <th scope="col">Status</th>
+         <th scope="col">Fecha</th>
          <th scope="col">Imagen</th>
-
+<th></th>
         <th>Mas</th>
 
 
@@ -189,7 +191,8 @@
          <td>{{ $itemvehiculo->mastil }}</td>
          <td>{{ $itemvehiculo->tipo}}</td>
          <td>{{ $itemvehiculo->status }}</td>
-         <td>IMAGEN...</td>
+         <td>{{ $itemvehiculo->fecha }}</td>
+         <td>imagen</td>
          <td>
           <a href="{{route('admin/edit',['id_vehiculo'=>$itemvehiculo->id_vehiculo])}}" class="font-bold
             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>

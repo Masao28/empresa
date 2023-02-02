@@ -105,6 +105,8 @@ class AdminController extends Controller {
        $query->status = $request->status;
        $query->id_motor = $request->id_motor;
        $query->id_tipoVehiculo = $request->id_tipoVehiculo;
+       $query->fecha = $request->fecha;
+      
        $query->save();
        return redirect()->route("admin.inventario", ['id_vehiculo' =>$id_vehiculo->id_vehiculo]);
     }

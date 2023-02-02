@@ -132,6 +132,17 @@
           <TD><div class="col-sm-10">
            <input name="status" type="text" class="form-control" id="inputstatus" placeholder="numero de status " value="{{$vehiculos->status}}">
          </div>
+         <TD><label for="inputimagen" class="col-sm-2 col-form-label">Imagen:</label>
+         </div></TD>  
+          <TD> 
+            <input type="file" name="image" placeholder="Choose image" id="image"   value="{{$vehiculos->imagen}}">
+            
+          </TD> 
+       <TR>
+      	</TR>
+        <tr>
+          <td><label for="inputfecha" class="col-sm-2 col-form-label">Fecha:</label></td>
+          <td><input type="date" name="fecha" id="inputfecha" class="form-control"  value="{{$vehiculos->fecha}}"></td>
        </TD>  
           <TD><div class="form-group row">
            <div class="col-sm-10">

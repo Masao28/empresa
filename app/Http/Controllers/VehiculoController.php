@@ -18,7 +18,8 @@ class VehiculoController extends Controller
         $vehiculo->status = $request->input("status");
         $vehiculo->id_motor = $request->input("id_motor");
         $vehiculo->id_tipoVehiculo = $request->input("id_tipoVehiculo");
-        
+        $vehiculo->fecha = $request->input("fecha");
+      
         $vehiculo->save();
         $vehiculos = Vehiculo::all();
         
