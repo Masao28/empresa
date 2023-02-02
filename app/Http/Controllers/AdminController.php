@@ -113,7 +113,26 @@ class AdminController extends Controller {
         $id_vehiculo->delete();
         return redirect()->route("admin.inventario");
         }
-   
+////////Editar empresa
+    public function edit2(Empresa $id_empresa)
+    {
+        $empresa=Empresa::find($id_empresa);
+       return view("admin.edit2");
+      
+    }
+    
+    public function salvar2(Empresa $id_empresa, Request $request){
+        $query= Empresa::find($id_empresa->id_empresa);
+           $query->nombre = $request->nombre;
+           $query->save();
+           return redirect()->route("admin.empresa", ['id_empresa' =>$id_empresa->id_empresa]);
+        }
+
+   ///////borrar empresa
+        public function borrarE(Empresa $id_empresa, Request $request){
+            $id_empresa->delete();
+            return redirect()->route("admin.empresa");
+            }
 
 
 }

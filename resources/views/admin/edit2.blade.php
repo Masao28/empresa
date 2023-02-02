@@ -37,10 +37,11 @@
   <br>
 
  <center>
-  <h1 class="text-3xl text-center pt-1">Agregar Empresa</h1>
-
- <form action="/guardar2" method="POST">
-  @csrf
+    <h1 class="text-2xl text-center pt-1">Editar empresa</h1>
+    
+    <form action="{{route('salvar2',['id_empresa'=> $empresa->id_empresa])}}" method="POST">
+      {{ csrf_field() }}
+      {{ method_field('PUT') }}
  <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
   
 	<TR>
@@ -48,7 +49,7 @@
       <label for="inputEmpresa" class="col-sm-2 col-form-label">Nombre de la empresa:</label>
     </div></TD> 
     <TD> <div class="col-sm-10">
-        <input name="nombre" type="text" class="form-control" id="inputEmpresa" placeholder="Nombre de la empresa">
+        <input name="nombre" type="text" class="form-control" id="inputEmpresa" placeholder="Nombre de la empresa"  value="{{$empresa->nombre}}">
       </div>
     </TD> 
 
@@ -61,52 +62,9 @@
 
       </div>
     </div></TD>  
-     <TD> <div class="w-1/1 px-0 mr-auto">
-        <a href="{{ route('admin.regresaragregar') }}" class="font-bold
-
-        py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
-
-      </div></TD>  
+     <TD></TD>  
   
   <TR>
 	</TR>
  </TABLE>
  </form></center>
-<center>  
-<h1 class="text-3xl text-center pt-1">lista  de Empresa</h1>
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      
-      <th scope="col">Nombre</th>
-     <th>Mas</th>
-
-   
-    </tr>
-  </thead>
-  <tbody>
-    
-    @foreach ($empresa as $item)
-    <tr>
-      <th scope="row">{{ $item->id_empresa }}</th>
-     
-      <td>{{ $item->nombre }}</td>
-      <td>    <a href="{{route('admin/edit2',['id_empresa'=>$item->id_empresa])}}" class="font-bold
-        py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a></td>
-        <td>
-
-          <a href="{{ route('borrarempresa', ['id_empresa'=>$item->id_empresa])}}"  class="font-bold
-          py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">Borrar</a></td>
-       </tr>
-    @endforeach
-  </tbody>
-</table></center>
-
-
-
-
-</body>
-</html>

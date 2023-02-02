@@ -45,8 +45,20 @@ Route::name('admin/edit')->get('edit/{id_vehiculo}', [AdminController::class, 'e
 ->middleware('auth.admin');
 Route::name('salvar')->put('salvar/{id_vehiculo}', [AdminController::class, 'salvar'])
 ->middleware('auth.admin');
+
+///////////////////////editar EMPRESA //////////////////
+Route::name('admin/edit2')->get('edit2/{id_empresa}', [AdminController::class, 'edit2'])
+->middleware('auth.admin');
+
+Route::name('salvar2')->put('salvar2/{id_empresa}', [AdminController::class, 'salvar2'])
+->middleware('auth.admin');
+
+
 //////////////////Borrar vehioculo//////////////////
 Route::name('borrarvehiculo')->get('borrarV/{id_vehiculo}', [AdminController::class, 'borrarV']);
+
+//////////////////Borrar empresa//////////////////
+Route::name('borrarempresa')->get('borrarE/{id_empresa}', [AdminController::class, 'borrarE']);
 
 ////ruta  de  Montacargasdeentrada
 Route::get('/MontacargasE', [AdminController::class, 'MontacargasE'])
