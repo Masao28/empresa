@@ -6,6 +6,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\RentaController;
 use App\Models\Empresa;
 
 
@@ -107,6 +108,14 @@ Route::post('/guardar2',[EmpresaController::Class ,'guardar2']);
 Route::get('/tablaempresa', [AdminController::class, 'tablaempresa'])
 ->middleware('auth.admin')
 ->name('admin.empresa');
+
+///guardar renta
+Route::post('/guardar3',[RentaController::Class ,'guardar3']);
+///tabla de renta
+Route::get('/tablarenta', [AdminController::class, 'tablarenta'])
+->middleware('auth.admin')
+->name('admin.Montacargasdesalida');
+
 ////////////////////////////////Creacion motor////////////////////////
 Route::post('/saveMotor',[EmpresaController::Class ,'saveMotor']);
 ////////////////////////////////Motores//////////////////////////////

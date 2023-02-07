@@ -87,8 +87,7 @@
    
     </tr>
   </thead>
-  <tbody>
-    
+  <tbody>  
     @foreach ($motores as $itemmotor)
     <tr>
       <th scope="row">{{ $itemmotor->id_motor }}</th>

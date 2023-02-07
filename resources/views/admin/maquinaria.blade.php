@@ -59,7 +59,7 @@
       
       </tr>
     <tr>
-        <td>Lista de Montacargas <br> de salida</td>
+        <td>Alquiler</td>
     
         <td><a href="{{ route('admin.Montacargasdesalida') }}" class="font-bold
               py-3 px-20 rounded-md bg-blue-200 hover:bg-blue-400">Ver lista</a></td>

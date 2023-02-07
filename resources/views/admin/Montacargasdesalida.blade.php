@@ -36,12 +36,95 @@
   <div class="col-sm-8">
   
 <center>
-  <h1 class="text-5xl text-center pt-2">Formato de renta de vehiculo</h1>
-  <br>
-  <div class="w-1/1 px-0 mr-auto">
-    <a href="{{ route('admin.maquinaria') }}" class="font-bold
-    py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
-</div>
+  <h1 class="text-4xl text-center pt-1">Alquiler de vehiculo</h1>
+  <form action="/guardar3" method="POST">
+   @csrf
+    <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
+      <TR>
+        <TD> 
+          <div class="form-group row">
+            <label for="inputid_empresa" class="col-sm-2 col-form-label">Empresa:</label>
+          </div>
+        </TD> 
+        <TD> 
+          <div class="col-sm-100">
+            <select name="id_empresa" class="form-control" id="inputid_empresa">
+      
+             </select>
+          </div>
+        </TD> 
+        <TD>
+          <div class="form-group row">
+            <label for="inputfecha" class="col-sm-2 col-form-label">Fecha:</label>
+          </div>
+        </TD>
+        <TD>
+          <div class="col-sm-10">
+            <input type="date" name="fecha_pedido" id="inputfecha_pedido" class="form-control">
+          </div>
+        </TD>
+        <TD> 
+          <div class="form-group row">
+             <label for="inputtipo_renta" class="col-sm-2 col-form-label">tipo_renta:</label>
+          </div>
+        </TD>
+        <TD>
+          <div class="col-sm-10">
+             <input name="tipo_renta" type="text" class="form-control" id="inputtipo_renta" placeholder="renta">
+           </div>
+          </TD>
+      </TR>
+      <TR>
+        <TD>
+         <div class="form-group row">
+           <label for="inputid_vechiculo" class="col-sm-2 col-form-label">Vehiculo:</label>
+         </div>
+        </TD>
+        <TD>
+          <select name="id_vehiculo" class="form-control" id="inputid_vehiculo">
+         
+          </select>
+        </TD>
+        <TD> 
+          <div class="form-group row">
+           <label for="inputrendatario" class="col-sm-2 col-form-label">Rendatario:</label>
+          </div>
+        </TD>
+        <TD>
+          <div class="col-sm-10">
+            <input name="rendatario" type="text" class="form-control" id="inputrendatario" placeholder="numero de capacidad ">
+          </div>
+          </TD>
+       <TD></TD>
+       <TD></TD>
+      </TR>
+    
+     <TR>
+        <TD></TD>
+        <TD></TD> 
+        <TD></TD>
+        <TD></TD>  
+        <TD></TD>  
+        <TD></TD> 
+     <TR>
+      </TR>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="font-bold py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Guardar</button>
+          </div>
+        </td>
+        <td><div class="w-1/1 px-0 mr-auto">
+          <a href="{{ route('admin.maquinaria') }}" class="font-bold py-2 px-5 rounded-md bg-blue-200 hover:bg-blue-400">Regresar</a>
+        </div></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </TABLE>
+  </form>
+  
 </center>
 
 
