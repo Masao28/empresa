@@ -120,8 +120,6 @@
            <select name="id_tipoVehiculo" type="text" class="form-control" id="inputid_tipoVehiculo ">
            @foreach($tipoV as $itemTV)
            <option value="{{ $itemTV->id_tipoVehiculo}}"> {{ $itemTV->nombre }} </option>
-
-
            @endforeach
          </select>
        </TD> 
