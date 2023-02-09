@@ -133,7 +133,7 @@
           <TD><label for="inputimagen" class="col-sm-2 col-form-label">Imagen:</label>
          </div></TD>  
           <TD> 
-            <input type="file" name="image" placeholder="Choose image" id="image">
+            <input type="file" name="img" placeholder="Choose image" id="img" value="{{ old('img') }}">
             
           </TD> 
        <TR>
@@ -190,7 +190,7 @@
          <td>{{ $itemvehiculo->tipo}}</td>
          <td>{{ $itemvehiculo->status }}</td>
          <td>{{ $itemvehiculo->fecha }}</td>
-         <td>imagen</td>
+         <td><img src="{{asset('imagenes/'.$itemvehiculo->img)}}"class="img-fluid" width="50" alt="20"></td>
          <td>
           <a href="{{route('admin/edit',['id_vehiculo'=>$itemvehiculo->id_vehiculo])}}" class="font-bold
             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>

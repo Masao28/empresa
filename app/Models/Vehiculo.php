@@ -18,9 +18,10 @@ class Vehiculo extends Model
     'mastil',
     'serie',
     'status',
+    'img',
+    'fecha',
     'id_motor',
     'id_tipoVehiculo',
-    'fecha',
     
     ];
     protected $primaryKey= 'id_vehiculo';
