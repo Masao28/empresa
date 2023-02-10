@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Request\ValidaRequest;
 use App\Models\Vehiculo;
 class VehiculoController extends Controller
 {
@@ -14,22 +16,23 @@ class VehiculoController extends Controller
             'mastil' => 'required',
             'serie' => 'required',
             'status' => 'required',
+            'foto' => 'required',
         ]);
-        if($request->file('img') != ''){
+        if($request->file('foto') != ''){
             //-------------------Foto/Archivo--------------
-            $file = $request->file('img');
+            $file = $request->file('foto');
 
-            $img = $file->getClientOriginalName();
+            $foto = $file->getClientOriginalName();
             //$foto = $request->$file->getClientOriginalName();
 
             $date =date('Ymd_His_');
-                  $img2 = $date . $img;
-
-            \Storage::disk('local')->put($img2, \File::get($file));
+                  $foto2 = $date . $foto;
+            
+            \Storage::disk('local')->put($foto2, \File::get($file));
         }
         else{
-            $img2 = "shadow.png";
-
+            $foto2 = "shadow.png";
+        
     }
     $vehiculo = new Vehiculo;
     $vehiculo->id_vehiculo = $request->input("id_vehiculo");
@@ -40,7 +43,7 @@ class VehiculoController extends Controller
     $vehiculo->serie = $request->input("serie");
     $vehiculo->status = $request->input("status");
     $vehiculo->status = $request->input("status");
-    $vehiculo->img = $img2;
+    $vehiculo->foto = $foto2;
     $vehiculo->id_motor = $request->input("id_motor");
     $vehiculo->id_tipoVehiculo = $request->input("id_tipoVehiculo");
     $vehiculo->fecha = $request->input("fecha");
@@ -48,7 +51,7 @@ class VehiculoController extends Controller
     $vehiculo->save();
     $vehiculos = Vehiculo::all();
 
-    return redirect()->to('tablavehiculo');
+        return redirect()->to('tablavehiculo');
     }
 
     

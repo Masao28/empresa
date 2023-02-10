@@ -38,7 +38,7 @@
 
     <center>
      <h1 class="text-2xl text-center pt-1">Agregar nuevo  vehiculo</h1>
-    <form action="/guardar" method="POST">
+    <form action="/guardar" method="POST" enctype="multipart/form-data">
      @csrf
       <TABLE BORDER CELLPADDING=20 CELLSPACING=10>
       	<TR>
@@ -49,7 +49,7 @@
           </TD> 
           <TD> 
             <div class="col-sm-10">
-              <select name="marca" type="text" class="form-control" id="inputmarca">
+              <select name="marca" type="text" value="{{ old('marca') }}" class="form-control" id="inputmarca">
                 <option value="TOYOTA">TOYOTA</option>
                 <option value="HYSTER">HYSTER</option>
                 <option value="CATERPILLAR">CATERPILLAR</option>
@@ -133,7 +133,7 @@
           <TD><label for="inputimagen" class="col-sm-2 col-form-label">Imagen:</label>
          </div></TD>  
           <TD> 
-            <input type="file" name="img" placeholder="Choose image" id="img" value="{{ old('img') }}">
+            <input type="file" name="foto" placeholder="Choose image"  value="{{ old('foto') }}">
             
           </TD> 
        <TR>
@@ -190,7 +190,7 @@
          <td>{{ $itemvehiculo->tipo}}</td>
          <td>{{ $itemvehiculo->status }}</td>
          <td>{{ $itemvehiculo->fecha }}</td>
-         <td><img src="{{asset('imagenes/'.$itemvehiculo->img)}}"class="img-fluid" width="50" alt="20"></td>
+         <td><img src="{{asset('imagenes/'.$itemvehiculo->foto)}}"class="img-fluid" width="70" alt="70"></td>
          <td>
           <a href="{{route('admin/edit',['id_vehiculo'=>$itemvehiculo->id_vehiculo])}}" class="font-bold
             py-1 px-3 rounded-md bg-red-200 hover:bg-red-400">editar</a>

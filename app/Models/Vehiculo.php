@@ -18,7 +18,7 @@ class Vehiculo extends Model
     'mastil',
     'serie',
     'status',
-    'img',
+    'foto',
     'fecha',
     'id_motor',
     'id_tipoVehiculo',
