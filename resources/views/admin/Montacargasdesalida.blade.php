@@ -46,13 +46,13 @@
             <label for="inputid_empresa" class="col-sm-2 col-form-label">Empresa:</label>
           </div>
         </TD> 
-        <TD> 
-          <div class="col-sm-100">
-            <select name="id_empresa" class="form-control" id="inputid_empresa">
-      
-             </select>
-          </div>
-        </TD> 
+        <TD>
+          <select name="id_empresa" class="form-control" id="inputid_motor">
+           @foreach($empresa as $itemE)
+           <option value="{{ $itemE->id_empresa}}"> {{ $itemE->nombre}} </option>
+           @endforeach
+          </select>
+        </TD>
         <TD>
           <div class="form-group row">
             <label for="inputfecha" class="col-sm-2 col-form-label">Fecha:</label>
@@ -81,8 +81,10 @@
          </div>
         </TD>
         <TD>
-          <select name="id_vehiculo" class="form-control" id="inputid_vehiculo">
-         
+          <select name="id_vehiculo" class="form-control" id="inputid_motor">
+           @foreach($vehiculo as $itemV)
+           <option value="{{ $itemV->id_vehiculo}}"> {{ $itemV->marca}} </option>
+           @endforeach
           </select>
         </TD>
         <TD> 
@@ -92,7 +94,7 @@
         </TD>
         <TD>
           <div class="col-sm-10">
-            <input name="rendatario" type="text" class="form-control" id="inputrendatario" placeholder="numero de capacidad ">
+            <input name="rendatario" type="text" class="form-control" id="inputrendatario" placeholder="Mario">
           </div>
           </TD>
        <TD></TD>
@@ -124,7 +126,45 @@
       </tr>
     </TABLE>
   </form>
-  
+  <h1 class="text-2x1 text-center pt-2">Lista de Rentas</h1>
+  <hr>
+    <table class="table">
+     <thead cclass="table-light">
+       <tr>
+         <th scope="col">#</th>
+         <th scope="col">Empresa</th>
+         <th scope="col">tipo renta</th>
+         <th scope="col">marca vehiculo</th>
+         <th scope="col">modelo vehiculo</th>
+         <th scope="col">Rendatario</th>
+         <th scope="col">Fecha</th>
+<th></th>
+        <th>Mas</th>
+
+
+       </tr>
+     </thead>
+     <tbody>
+
+       @foreach ($rentas as $itemrenta)
+       <tr>
+       <th scope="row">{{ $itemrenta->id_renta}}</th>
+         <td >{{ $itemrenta->empresa }}</td>
+         <td>{{ $itemrenta->tipo_renta }}</td>
+         <td>{{ $itemrenta->marca}}</td>
+         <td>{{ $itemrenta->modelo}}</td>
+         <td>{{ $itemrenta->rendatario }}</td>
+         <td>{{ $itemrenta->fecha_pedido }}</td>
+         <td>
+         </td>
+           <td>
+            
+            
+        </td>
+          </tr>
+
+       @endforeach
+     </tbody>
 </center>
 
 

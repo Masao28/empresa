@@ -55,9 +55,15 @@ class AdminController extends Controller {
         return view('admin.tipovehiculo', compact('tipoV'));
     }
     public function tablarenta(){
-       
-        $rentav = DB::table('rentas')->get();
-        return view('admin.montacargasdesalida', compact('rentav'));
+       $empresa=Empresa::all();
+       $vehiculo=Vehiculo::all();
+        $rentas = DB::table('rentas')
+        ->join('empresas', 'rentas.id_empresa', '=' , 'empresas.id_empresa')
+        ->join('vehiculos', 'rentas.id_vehiculo', '=' , 'vehiculos.id_vehiculo')
+        ->select('empresas.nombre as empresa', 'empresas.id_empresa as idE', 'vehiculos.marca as marca', 'vehiculos.modelo as modelo', 'vehiculos.id_vehiculo as idV', 'rentas.*')
+        ->orderBy('rentas.id_renta','asc')
+        ->get();
+        return view('admin.montacargasdesalida', compact('vehiculo','empresa','rentas'));
     }
    
     
